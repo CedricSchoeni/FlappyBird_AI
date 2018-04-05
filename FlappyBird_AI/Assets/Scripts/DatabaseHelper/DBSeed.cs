@@ -23,19 +23,23 @@ public class DBSeed {
         SqliteConnection dbConnection = new SqliteConnection(conString);
         dbConnection.Open();
 
-        // create tables
-        string sql = "CREATE TABLE Difficulties (id INTEGER PRIMARY KEY, name VARCHAR(50), ymin FLOAT, ymax FLOAT, speedpoint INTEGER);";
+        // create table
+        string sql = "CREATE TABLE Difficulties (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(50), ymin FLOAT, ymax FLOAT, scorePoint INTEGER);";
         SqliteCommand command = new SqliteCommand(sql, dbConnection);
         command.ExecuteNonQuery();
 
+        sql = "CREATE TABLE Weights (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(50), weights TEXT);";
+        command = new SqliteCommand(sql, dbConnection);
+        command.ExecuteNonQuery();
+
         // insert base data
-        sql = "INSERT INTO Difficulties (name, ymin, ymax, speedpoint) VALUES('Easy', -0, 0, 10);";
+        sql = "INSERT INTO Difficulties (name, ymin, ymax, scorePoint) VALUES('Easy', -0, 0, 10);";
         command = new SqliteCommand(sql, dbConnection);
         command.ExecuteNonQuery();
-        sql = "INSERT INTO Difficulties (name, ymin, ymax, speedpoint) VALUES('Normal', -1, 1, 5);";
+        sql = "INSERT INTO Difficulties (name, ymin, ymax, scorePoint) VALUES('Normal', -1, 1, 5);";
         command = new SqliteCommand(sql, dbConnection);
         command.ExecuteNonQuery();
-        sql = "INSERT INTO Difficulties (name, ymin, ymax, speedpoint) VALUES('Hard', -2, 2, 2);";
+        sql = "INSERT INTO Difficulties (name, ymin, ymax, scorePoint) VALUES('Hard', -2, 2, 2);";
         command = new SqliteCommand(sql, dbConnection);
         command.ExecuteNonQuery();
 

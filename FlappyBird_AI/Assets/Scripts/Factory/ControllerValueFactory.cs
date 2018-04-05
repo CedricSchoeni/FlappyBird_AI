@@ -7,14 +7,14 @@ public class ControllerValueFactory
 {
 
 
-    public IControllerValue getGameValues(MainController main, IView view, PipeControllerValue pipeControllerValue, bool isActive, int scoreIncrement)
+    public IControllerValue getGameValues(MainController main, IView view, PipeControllerValue pipeControllerValue, bool isActive, int scoreIncrement, Weights weights = null)
     {
-        return new GameControllerValue(main, view, pipeControllerValue, isActive, scoreIncrement);
+        return new GameControllerValue(main, view, pipeControllerValue, isActive, scoreIncrement, weights);
     }
 
-    public IControllerValue getBirdValues(bool isActive)
+    public IControllerValue getBirdValues(bool isActive, double[] weights = null)
     {
-        return new BirdControllerValue(isActive);
+        return new BirdControllerValue(isActive, weights);
     }
 
     public IControllerValue getPipeValues(float colYMin, float colYMax)

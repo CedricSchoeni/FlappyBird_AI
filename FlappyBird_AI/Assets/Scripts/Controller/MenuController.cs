@@ -29,6 +29,7 @@ public class MenuController : ACController, IController
         // at this point the class has already been updated with the correct values from the MainController 
 
         ((UICustomMenuView)UIview).createDifficultiesList(selectAllDifficulties());
+        ((UICustomMenuView)UIview).createNetworkList(selectAllNetworks());
     }
 
     private List<Entity> selectAllDifficulties()
@@ -42,8 +43,25 @@ public class MenuController : ACController, IController
             {
                 while (rdr.Read())
                 {
-                    test.Add(new Difficulties( rdr.GetInt32(0), rdr.GetString(1), rdr.GetFloat(2), rdr.GetFloat(3), rdr.GetInt32(4)));
-                    //Debug.Log(rdr.GetString(1) + " " + rdr.GetFloat(2) + " " + rdr.GetFloat(3) + " " + rdr.GetInt32(4));
+                    test.Add(new Difficulties( rdr.GetInt32(0).ToString(), rdr.GetString(1), rdr.GetFloat(2), rdr.GetFloat(3), rdr.GetInt32(4)));
+                }
+            }
+        }
+        return test;
+    }
+
+    private List<Entity> selectAllNetworks()
+    {
+        List<Entity> test = new List<Entity>();
+        SqliteConnection con = DBConnection.getDbConnection();
+        string stm = "SELECT * FROM Weights;";
+        using (SqliteCommand cmd = new SqliteCommand(stm, con))
+        {
+            using (SqliteDataReader rdr = cmd.ExecuteReader())
+            {
+                while (rdr.Read())
+                {
+                    test.Add(new Weights(rdr.GetInt32(0).ToString(), rdr.GetString(1), rdr.GetString(2)));
                 }
             }
         }
@@ -52,12 +70,12 @@ public class MenuController : ACController, IController
 
     public override void handleKeyDown(KeyCode key)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public override void handleLClick()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public IController updateController(IControllerValue c)

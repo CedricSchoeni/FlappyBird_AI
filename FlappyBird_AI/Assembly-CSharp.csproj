@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\Interfaces\IControllerValue.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IView.cs" />
      <Compile Include="Assets\Scripts\Model\Difficulties.cs" />
+     <Compile Include="Assets\Scripts\Model\Weights.cs" />
      <Compile Include="Assets\Scripts\NeuralNetwork\DeepNeuralNetwork.cs" />
      <Compile Include="Assets\Scripts\Observers\Column.cs" />
      <Compile Include="Assets\Scripts\Observers\InputHandler.cs" />

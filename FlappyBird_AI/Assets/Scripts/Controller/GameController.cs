@@ -15,6 +15,8 @@ public class GameController : ACController, IController {
     private PipeController pManager; // places the pipes
     private BackgroundController bgManager; // manages the scrolling background
 
+    private Entity weights;
+
     // SerializeField allows these private fields to be shown in the editor
     // this way they can be assigned there
 
@@ -89,6 +91,7 @@ public class GameController : ACController, IController {
 
     private void createPlayers()
     {
+        Debug.Log(weights);
         birds = new List<BirdController>();
         if (runAi)
         {
@@ -96,7 +99,12 @@ public class GameController : ACController, IController {
             greenBirds = initBirds(greenBirdPrefab, greenBirdCount);
             blueBirds = initBirds(blueBirdPrefab, blueBirdCount);
             orangeBirds = initBirds(orangeBirdPrefab, orangeBirdCount);
-            yellowBird = initBirds(yellowBirdPrefab, 1)[0];
+            if (weights != null)
+            {
+                yellowBird = initBirds(yellowBirdPrefab, 1, true, true)[0];
+            } else
+                yellowBird = initBirds(yellowBirdPrefab, 1)[0];
+
         }
         else
         {
@@ -104,12 +112,31 @@ public class GameController : ACController, IController {
         }
     }
     
-    private List<BirdController> initBirds(GameObject prefab, int count, bool runAi = true)
+    private double[] setWeights()
+    {
+        string[] arr = ((Weights)weights).weights.Split('|');
+        double[] res = new double[arr.Length];
+        for (int i = 0; i < res.Length; i++)
+        {
+            res[0] = double.Parse(arr[0]);
+        }
+        return res;
+    }
+
+    private List<BirdController> initBirds(GameObject prefab, int count, bool runAi = true, bool presetWeights = false)
     {
         List<BirdController> list = new List<BirdController>();
         for (int i = 0; i < count; i++)
         {
-            BirdController bird = (BirdController)Instantiate(prefab, spawnPos, Quaternion.identity).GetComponent<BirdController>().updateController(main.factory.getBirdValues(runAi));
+            BirdController bird;
+            if (!presetWeights)
+                bird = (BirdController)Instantiate(prefab, spawnPos, Quaternion.identity).GetComponent<BirdController>().updateController(main.factory.getBirdValues(runAi));
+            else
+            {
+                double[] weights = setWeights();
+                bird = (BirdController)Instantiate(prefab, spawnPos, Quaternion.identity).GetComponent<BirdController>().updateController(main.factory.getBirdValues(runAi, weights));
+            }
+                
             list.Add(bird);
             birds.Add(bird); 
         }
@@ -227,6 +254,35 @@ public class GameController : ACController, IController {
         }
     }
 
+    public void saveBestNetwork()
+    {
+        // get highest score
+        int highestIndex = -1;
+        int highestScore = 0;
+        for (int i = 0; i < birds.Count; i++)
+        {
+            if (birds[i].score >= highestScore)
+            {
+                highestIndex = i;
+                highestScore = birds[i].score;
+            }
+        }
+        double[] bestWeights = birds[highestIndex].nn.GetWeights();
+        System.Text.StringBuilder builder = new System.Text.StringBuilder();
+        foreach (double value in bestWeights)
+        {
+            builder.Append(value);
+            builder.Append('|');
+        }
+
+        string res = builder.ToString();
+        Entity weights = new Weights(null, "autogen_" + (int)System.DateTime.Now.Ticks, res);
+        weights.update();
+        main.loadScene(0);
+    }
+
+
+
 
     public IController updateController(IControllerValue c)
     {
@@ -235,6 +291,7 @@ public class GameController : ACController, IController {
 
         this.main = ((GameControllerValue)c).main;
         this.UIview = ((GameControllerValue)c).view;
+        this.weights = ((GameControllerValue)c).weights;
 
         this.runAi = ((GameControllerValue)c).aiActive;
         this.scoreIncrement = ((GameControllerValue)c).scoreIncrement;
@@ -243,7 +300,7 @@ public class GameController : ACController, IController {
 
     public override void handleKeyDown(KeyCode key)
     {
-        throw new System.NotImplementedException();
+        ((UIGameView)UIview).switchMenu();
     }
 
     public override void handleLClick()

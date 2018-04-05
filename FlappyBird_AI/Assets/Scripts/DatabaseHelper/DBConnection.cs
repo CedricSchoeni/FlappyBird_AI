@@ -8,7 +8,7 @@ using System;
 
 public class DBConnection
 {
-
+    
     private static SqliteConnection dbConnection;
     private static string connectionString = "URI=file:" + Application.dataPath + "mainDb.sqlite";
 

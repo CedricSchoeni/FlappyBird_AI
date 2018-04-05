@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IController  {
+public interface IController {
 
     IController updateController(IControllerValue c);
 }

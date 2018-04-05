@@ -17,11 +17,12 @@ public class BirdController : MonoBehaviour,IController {
 
     private double pipeCenter;
     private double playerPos;
-    //private double distanceToPipe;
     private bool aiActive = false;
 
     public Vector2 firstPipePos = new Vector2(0,0);
     private Vector2 spawnPos;
+
+    private double[] weights;
 
 
 
@@ -31,6 +32,9 @@ public class BirdController : MonoBehaviour,IController {
         rigidbody2D = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         nn = new DeepNeuralNetwork(2, new int[] { 6 }, 2);
+        Debug.Log(weights);
+        if (weights != null)
+            nn.SetWeights(weights);
         maxY = GameController._instance.bgSize.y - 2f;
         spawnPos = GameController._instance.spawnPos;
     }
@@ -40,7 +44,6 @@ public class BirdController : MonoBehaviour,IController {
 
         pipeCenter = firstPipePos.y;
         playerPos = transform.position.y;
-        //distanceToPipe = (firstPipePos.x - transform.position.x - spawnPos.x) / 10;
         double[] output = nn.ComputeOutputs(new double[] { playerPos, pipeCenter });
         double maxValue = output.Max();
         int maxIndex = output.ToList().IndexOf(maxValue);
@@ -50,6 +53,7 @@ public class BirdController : MonoBehaviour,IController {
     public IController updateController(IControllerValue c)
     {
         this.aiActive = ((BirdControllerValue)c).aiActive;
+        this.weights = ((BirdControllerValue)c).weights;
         return this;
     }
 

@@ -45,7 +45,10 @@ public class MainController : MonoBehaviour {
 
     public void setViewData(string key, System.Object data)
     {
-        viewData.Add(key, data);
+        if (!viewData.ContainsKey(key))
+            viewData.Add(key, data);
+        else
+            viewData[key] = data;
     }
 
     public void sceneLoaded()
@@ -74,6 +77,7 @@ public class MainController : MonoBehaviour {
                 break;
             case 3: // GameScene AIplay loaded
                 IControllerValue pVal2 = null;
+                Weights w1 = null;
                 int scorePoint = 0;
                 if (viewData.ContainsKey("difficulty"))
                 {
@@ -86,22 +90,24 @@ public class MainController : MonoBehaviour {
                     Debug.LogError("if you readed this:\n\n\n\n you're mom gayed lol xdddddddddddd - campiotti");
                 }
 
+                if (viewData.ContainsKey("weights"))
+                    w1 = (Weights)viewData["weights"];
+
                 view = scripts.GetComponent<UIGameView>(); // get view from _SCRIPTS_ GameObject
                 
                 viewController = (GameController)scripts.GetComponent<GameController>().updateController(
-                        factory.getGameValues(this, view, (PipeControllerValue)pVal2, true, scorePoint)
+                        factory.getGameValues(this, view, (PipeControllerValue)pVal2, true, scorePoint, w1)
                         );
                 break;
-            case 4: // Edit Difficulties loaded
-                Difficulties d = null;
+            case 4: // Edit Model loaded
                 Entity e = null;
+
                 if (viewData.ContainsKey("entity"))
                     e = (Entity)viewData["entity"];
                 else
                 {
                     Debug.LogError("if you readed this:\n\n\n\n you're mom gayed lol xdddddddddddd - campiotti");
                 }
-                
 
                 view = scripts.GetComponent<UIEditView>(); // get view from _SCRIPTS_ GameObject
 

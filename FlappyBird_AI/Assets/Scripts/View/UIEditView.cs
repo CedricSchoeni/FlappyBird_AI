@@ -20,6 +20,9 @@ public class UIEditView : ACView, IView
         difficultyParent.transform.Find("Edit").gameObject.SetActive(!create);
         difficultyParent.transform.Find("Save").gameObject.SetActive(create);
 
+        difficultyParent.transform.Find("Edit").GetComponent<Button>().onClick.AddListener(() => updateDifficulties(d));
+        difficultyParent.transform.Find("Delete").GetComponent<Button>().onClick.AddListener(() => deleteDifficulties(d));
+
         if (create) return;
 
         // fill input fields with values from model
@@ -27,7 +30,7 @@ public class UIEditView : ACView, IView
         difficultyParent.transform.Find("yMin").GetComponentInChildren<Text>().text = d.yMin.ToString();    
         difficultyParent.transform.Find("yMax").GetComponentInChildren<Text>().text = d.yMax.ToString();    
         difficultyParent.transform.Find("ScoreIncrement").GetComponentInChildren<Text>().text = d.scorePoint.ToString();
-        difficultyParent.transform.Find("Edit").GetComponent<Button>().onClick.AddListener(() => updateDifficulties(d));
+
     }
 
     public void updateDifficulties(Difficulties d)
@@ -42,18 +45,49 @@ public class UIEditView : ACView, IView
         d.yMax = (yMax.Trim() != "") ? float.Parse(yMax) : d.yMax;
         d.scorePoint = (scorePoint.Trim() != "") ? int.Parse(scorePoint) : d.scorePoint;
 
-        Debug.Log(d.name);
-        Debug.Log(d.yMin);
-        Debug.Log(d.yMax);
-        Debug.Log(d.scorePoint);
-
         d.update();
+        MainController._instance.loadScene(1);
     }
 
-    public void prepareNetwork(bool create = false)
+    public void deleteDifficulties(Difficulties d)
+    {
+        d.delete();
+        MainController._instance.loadScene(1);
+    }
+
+    public void prepareNetwork(Weights d, bool create = false)
     {
         networkParent.SetActive(true);
+
+        networkParent.transform.Find("Edit").gameObject.SetActive(!create);
+        networkParent.transform.Find("Save").gameObject.SetActive(create);
+
+        networkParent.transform.Find("Edit").GetComponent<Button>().onClick.AddListener(() => updateWeights(d));
+        networkParent.transform.Find("Delete").GetComponent<Button>().onClick.AddListener(() => deleteWeights(d));
+
+        if (create) return;
+
+        // fill input fields with values from model
+        networkParent.transform.Find("Name").GetComponentInChildren<Text>().text = d.name;
+
     }
+
+    public void updateWeights(Weights d)
+    {
+        string name = networkParent.transform.Find("Name").GetComponent<InputField>().text;
+
+        d.name = (name != "") ? name : d.name;
+
+        d.update();
+        MainController._instance.loadScene(1);
+    }
+
+    public void deleteWeights(Weights d)
+    {
+        d.delete();
+        MainController._instance.loadScene(1);
+    }
+
 
     public void activate(string name, bool active)
     {

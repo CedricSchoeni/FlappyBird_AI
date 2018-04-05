@@ -35,16 +35,19 @@ public class EditController : ACController, IController {
     private void prepareView()
     {
         string type = entity.GetType().ToString();
+        bool create = false;
         switch (type)
         {
             case "Difficulties":
-                ((UIEditView)UIview).prepareDifficulties((Difficulties)entity);
+                if (((Difficulties)entity).id == null) create = true;
+                ((UIEditView)UIview).prepareDifficulties((Difficulties)entity, create);
                 break;
-            case "Network":
-                ((UIEditView)UIview).prepareNetwork();
+            case "Weights":
+                if (((Weights)entity).id == null) create = true;
+                ((UIEditView)UIview).prepareNetwork((Weights)entity, create);
                 break;
             default:
-                Debug.LogError("Unknown Entity found");
+                Debug.LogError("Unknown Entity found: " + type);
                 break;
         }
     }

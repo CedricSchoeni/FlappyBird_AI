@@ -4,7 +4,11 @@ using UnityEngine;
 
 public interface Entity {
 
-    void create();
+    void save();
     void update();
     void delete();
+    /*
+    void create();
+    void update();
+    void delete();*/
 }
