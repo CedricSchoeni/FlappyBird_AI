@@ -32,9 +32,11 @@ public class BirdController : MonoBehaviour,IController {
         rigidbody2D = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         nn = new DeepNeuralNetwork(2, new int[] { 6 }, 2);
-        Debug.Log(weights);
         if (weights != null)
+        {
             nn.SetWeights(weights);
+        }
+
         maxY = GameController._instance.bgSize.y - 2f;
         spawnPos = GameController._instance.spawnPos;
     }

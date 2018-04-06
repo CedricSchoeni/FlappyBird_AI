@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="ACController" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\AbstractClasses\ACController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ACEntity" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAADAAAAAAAAAAQAAIAwAAAABAAJAAAAEAgA=</HashCode>
+      <FileName>Assets\Scripts\AbstractClasses\ACEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACView" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AbstractClasses\ACView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackgroundController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAEACAAhAAAAAAAAAAAAAAAAAAAAAQAIAABAQA=</HashCode>
+      <FileName>Assets\Scripts\Controller\BackgroundController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BirdController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAQQAAICAAAAgAARQJAAAgAAAAQAAIAQAgYCAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\BirdController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BirdControllerValue" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\BirdControllerValue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Column" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Observers\Column.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ControllerValueFactory" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAABAAAIAAAAAIAACAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\ControllerValueFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DBConnection" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAABAAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DatabaseHelper\DBConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DBSeed" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DatabaseHelper\DBSeed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DeepNeuralNetwork" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQEIQDAACEQQAAAAAAQQAgAGAAAAAAAgCAAAAAEBSA=</HashCode>
+      <FileName>Assets\Scripts\NeuralNetwork\DeepNeuralNetwork.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Difficulties" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAEEAAEAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Model\Difficulties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditController" Collapsed="true">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEEABAAACAAAAAAAAAAAAAAAAAAABAAAAAABQBAAAQ=</HashCode>
+      <FileName>Assets\Scripts\Controller\EditController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EditControllerValue" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAQ=</HashCode>
+      <FileName>Assets\Scripts\Factory\EditControllerValue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameController" Collapsed="true">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAUEAcAAACgCJAkABCQRACAAEgAAYDBAIIgANADQDQQ=</HashCode>
+      <FileName>Assets\Scripts\Controller\GameController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameControllerValue" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAUABAAQAAQAAAAAQ=</HashCode>
+      <FileName>Assets\Scripts\Factory\GameControllerValue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InputHandler" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Assets\Scripts\Observers\InputHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainController" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAMAACIgAAAIgAABAAAAAAAAABAEAAAAAAhAAEA=</HashCode>
+      <FileName>Assets\Scripts\Controller\MainController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuController" Collapsed="true">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEEAAAAACAAAAAAAAQAAABAAAAAABAAAAAABABAAAQ=</HashCode>
+      <FileName>Assets\Scripts\Controller\MenuController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MenuControllerValue" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAQ=</HashCode>
+      <FileName>Assets\Scripts\Factory\MenuControllerValue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PipeController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgWAAAAwaCAgBACAAIQAAAAAABAAAAEAAAwAJEAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Controller\PipeController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PipeControllerValue" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\PipeControllerValue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UICustomMenuView" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAEIAAAQACAAAEAAAEAAAAAAgAAAAI=</HashCode>
+      <FileName>Assets\Scripts\View\UICustomMenuView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIEditView" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACgAAAAAgAAAAAAAAAQAQACAAAAAAAAAwAAAAAAABBA=</HashCode>
+      <FileName>Assets\Scripts\View\UIEditView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIGameView" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIQASAAAAAAAAAAAAAEAAABgA=</HashCode>
+      <FileName>Assets\Scripts\View\UIGameView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIHandler" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAARAAACAAAAAACAAAAAAAABAAAAAAAAAgAAAAAAQ=</HashCode>
+      <FileName>Assets\Scripts\Observers\UIHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Validator" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAABAAAAABAAAQAEAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Helper\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Weights" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Model\Weights.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Entity" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Interfaces\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IController" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Interfaces\IController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IControllerValue" Collapsed="true">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Interfaces\IControllerValue.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IView" Collapsed="true">
+    <Position X="13" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Interfaces\IView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

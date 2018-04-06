@@ -91,7 +91,6 @@ public class GameController : ACController, IController {
 
     private void createPlayers()
     {
-        Debug.Log(weights);
         birds = new List<BirdController>();
         if (runAi)
         {
@@ -115,7 +114,7 @@ public class GameController : ACController, IController {
     private double[] setWeights()
     {
         string[] arr = ((Weights)weights).weights.Split('|');
-        double[] res = new double[arr.Length];
+        double[] res = new double[arr.Length - 1];
         for (int i = 0; i < res.Length; i++)
         {
             res[0] = double.Parse(arr[0]);

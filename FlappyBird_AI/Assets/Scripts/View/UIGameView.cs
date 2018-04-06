@@ -62,6 +62,7 @@ public class UIGameView : ACView, IView
     public void switchMenu()
     {
         bool active = optionMenu.activeSelf;
+        Time.timeScale = (!active) ? 0f : 1f;
         optionMenu.SetActive(!active);
     }
 }

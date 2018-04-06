@@ -181,7 +181,10 @@ public class DeepNeuralNetwork {
         // order: ihweights - hhWeights[] - hoWeights - hBiases[] - oBiases
         int nw = NumWeights(this.nInput, this.nHidden, this.nOutput);  // total num wts + biases
         if (wts.Length != nw)
-            return;
+        {
+            Debug.LogError("Weights size does not match");
+        }
+
         int ptr = 0;  // pointer into wts[]
 
         for (int i = 0; i < nInput; ++i)  // input node

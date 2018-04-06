@@ -33,10 +33,12 @@ public abstract class ACEntity : Entity
     protected void setProperty(string name, System.Object property)
     {
         if (this.managedProperties.ContainsKey(name))
+        {
             this.managedProperties[name] = property;
-        Type myType = this.GetType();
-        FieldInfo myFieldInfo = myType.GetField(name);
-        myFieldInfo.SetValue(this, property);
+            Type myType = this.GetType();
+            FieldInfo myFieldInfo = myType.GetField(name);
+            myFieldInfo.SetValue(this, property);
+        }
     }
 
     protected string getColumnValues(bool ignoreId)
