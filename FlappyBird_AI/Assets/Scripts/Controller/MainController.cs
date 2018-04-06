@@ -27,7 +27,8 @@ public class MainController : MonoBehaviour {
         {
             DontDestroyOnLoad(gameObject);
             _instance = this;
-        } else
+        }
+        else
         {
             Destroy(gameObject);
         }
@@ -70,7 +71,7 @@ public class MainController : MonoBehaviour {
                 break;
             case 2: // GameScene Normalplay loaded
                 view = scripts.GetComponent<UIGameView>(); // get view from _SCRIPTS_ GameObject
-                IControllerValue pVal = new PipeControllerValue(-2f, 2f);
+                IControllerValue pVal = new PipeControllerValue(-2f, 2f); // FACTORY
                 viewController = (GameController)scripts.GetComponent<GameController>().updateController(
                         factory.getGameValues(this, view, (PipeControllerValue)pVal, false, 1)
                         );
@@ -87,7 +88,7 @@ public class MainController : MonoBehaviour {
                 }
                 else
                 {
-                    Debug.LogError("if you readed this:\n\n\n\n you're mom gayed lol xdddddddddddd - campiotti");
+                    Debug.LogError("Difficulties not set.");
                 }
 
                 if (viewData.ContainsKey("weights"))
@@ -106,7 +107,7 @@ public class MainController : MonoBehaviour {
                     e = (Entity)viewData["entity"];
                 else
                 {
-                    Debug.LogError("if you readed this:\n\n\n\n you're mom gayed lol xdddddddddddd - campiotti");
+                    Debug.LogError("Difficulties not set.");
                 }
 
                 view = scripts.GetComponent<UIEditView>(); // get view from _SCRIPTS_ GameObject

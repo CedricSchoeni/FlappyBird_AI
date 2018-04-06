@@ -299,7 +299,7 @@ public class GameController : ACController, IController {
 
     public override void handleKeyDown(KeyCode key)
     {
-        ((UIGameView)UIview).switchMenu();
+        ((UIGameView)UIview).switchOptionMenu();
     }
 
     public override void handleLClick()

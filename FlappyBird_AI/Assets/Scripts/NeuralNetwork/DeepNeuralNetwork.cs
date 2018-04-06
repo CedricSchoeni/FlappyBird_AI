@@ -403,16 +403,6 @@ public class DeepNeuralNetwork {
             result[i] = new double[cols];
         return result;
     }
-  //********
 
-// Use this for initialization
-void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 }

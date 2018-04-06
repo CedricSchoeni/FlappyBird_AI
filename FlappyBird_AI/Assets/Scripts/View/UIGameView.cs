@@ -59,10 +59,8 @@ public class UIGameView : ACView, IView
         GameController._instance.saveBestNetwork();
     }
 
-    public void switchMenu()
+    public void switchOptionMenu()
     {
-        bool active = optionMenu.activeSelf;
-        Time.timeScale = (!active) ? 0f : 1f;
-        optionMenu.SetActive(!active);
+        base.switchOptionMenu();
     }
 }

@@ -9,7 +9,6 @@ using System.Reflection;
 
 public abstract class ACEntity : Entity
 {
-    private FieldInfo[] fields;
     public string id;
     protected string tableName;
     protected SqliteConnection conn;
@@ -20,7 +19,6 @@ public abstract class ACEntity : Entity
     public ACEntity()
     {
         this.tableName = GetType().Name.ToLower();
-        fields = GetType().GetFields();
         this.conn = DBConnection.getDbConnection();
         this.addProperty("id", this.id);
     }

@@ -7,8 +7,4 @@ public interface Entity {
     void save();
     void update();
     void delete();
-    /*
-    void create();
-    void update();
-    void delete();*/
 }
