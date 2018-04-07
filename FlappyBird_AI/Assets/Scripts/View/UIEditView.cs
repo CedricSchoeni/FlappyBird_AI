@@ -16,12 +16,12 @@ public class UIEditView : ACView, IView
     public void prepareDifficulties(Difficulties d, bool create = false)
     {
         difficultyParent.SetActive(true);
-
+        string buttonName = (create) ? "Save" : "Edit";
         difficultyParent.transform.Find("Edit").gameObject.SetActive(!create);
         difficultyParent.transform.Find("Save").gameObject.SetActive(create);
 
-        difficultyParent.transform.Find("Edit").GetComponent<Button>().onClick.AddListener(() => updateDifficulties(d));
-        difficultyParent.transform.Find("Delete").GetComponent<Button>().onClick.AddListener(() => deleteDifficulties(d));
+        difficultyParent.transform.Find(buttonName).GetComponent<Button>().onClick.AddListener(() => updateDifficulties(d));
+        difficultyParent.transform.Find(buttonName).GetComponent<Button>().onClick.AddListener(() => deleteDifficulties(d));
 
         if (create) return;
 

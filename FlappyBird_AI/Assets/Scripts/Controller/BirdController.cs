@@ -46,7 +46,7 @@ public class BirdController : MonoBehaviour,IController {
 
         pipeCenter = firstPipePos.y;
         playerPos = transform.position.y;
-        double[] output = nn.ComputeOutputs(new double[] { playerPos, pipeCenter });
+        double[] output = nn.ComputeOutputs(new double[] { playerPos, pipeCenter});
         double maxValue = output.Max();
         int maxIndex = output.ToList().IndexOf(maxValue);
         autoFlap(maxIndex);

@@ -76,7 +76,7 @@ public abstract class ACEntity : Entity
 
     public void save()
     {   
-        string query = "INSERT INTO `" + this.tableName + "`(" + this.getColumnValues(true) + ") VALUES ( " + this.getFieldValues(true) + " );";
+        string query = "INSERT INTO `" + this.tableName + "` (" + this.getColumnValues(true) + ") VALUES ( " + this.getFieldValues(true) + " )";
         SqliteCommand stmt = new SqliteCommand(query, conn);
         stmt.ExecuteNonQuery();
     }

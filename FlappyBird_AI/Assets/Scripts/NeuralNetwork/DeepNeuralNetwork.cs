@@ -93,6 +93,7 @@ public class DeepNeuralNetwork {
 
         if (xValues.Length != nInput)
         {
+            Debugger.getInstance().writeToFile("InputNodes and parameter length does not match");
             Debug.LogError("InputNodes and parameter length does not match");
         }
 
@@ -155,7 +156,6 @@ public class DeepNeuralNetwork {
 
     /// <summary>
     /// takes in a double array and calculates the softmax for every index
-    /// sigmoid activation function
     /// </summary>
     /// <param name="oSums">Double array</param>
     /// <returns></returns>

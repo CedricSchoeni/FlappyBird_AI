@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Controller\PipeController.cs" />
      <Compile Include="Assets\Scripts\DatabaseHelper\DBConnection.cs" />
      <Compile Include="Assets\Scripts\DatabaseHelper\DBSeed.cs" />
+     <Compile Include="Assets\Scripts\DebugLog\Debugger.cs" />
      <Compile Include="Assets\Scripts\Factory\BirdControllerValue.cs" />
      <Compile Include="Assets\Scripts\Factory\ControllerValueFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\EditControllerValue.cs" />
@@ -83,6 +84,7 @@
      <Compile Include="Assets\Scripts\View\UICustomMenuView.cs" />
      <Compile Include="Assets\Scripts\View\UIEditView.cs" />
      <Compile Include="Assets\Scripts\View\UIGameView.cs" />
+     <None Include="Assets\errorlog.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
